@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*Background*/
+html,body{
+    display: grid;
+    height: 100%;
+    place-items: center;
+    background:#2464fa;
+    width: 100%;
+    transition: background 0.3s ease
+}
+
+/*Estrutura do container*/
+
+.container{
+    position: relative;
+    height: 500px;
+    width: 380px;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+/*Efeito de sombra */
+.container:hover{
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8);
+}
+
+/*Estrutura da imagem no container*/
+.container .image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*Estrutura da imagem dentro da classe imagem*/
+.container .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+/*Efeito de aumento de tamanho*/
+.container:hover .image img{
+    transform: scale(1.1);
+}
+
+/*Estrutura do card*/
+.container .card-content{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+/*Estrutura do conteúdo do card*/
+.card-content .wrapper{
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    bottom: -100%;
+    padding: 10px 25px;
+    box-shadow: -1px -1px 6px rgba(0, 0,0,0.2);
+    transition: bottom 0.3s ease;
+}
+
+/*Efeito de abertura do card*/
+.container:hover .wrapper{
+    bottom: 0px;
+}
+
+/*estrutura do titulo do card*/
+.wrapper .title{
+    font-size: 22px;
+    font-weight: 500px;
+}
+
+/*Estrutura do paragrafo do card*/
+.wrapper p{
+    font-size: 17px;
+    font-weight: 500;
+    color: grey;
+}
+
+/*Estrutura do preço*/
+.wrapper .price{
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    color: #2464fa;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+/*Margem do conteúdo do card*/
+.wrapper .content{
+    margin: 10px 0;
+}
+
+/*Estilização do texto do card*/
+.wrapper .content .name{
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+/*Estrutura dos tamanhos*/
+.card-content .size-value{
+    display: flex;
+    width: 50%;
+    margin: 5px 0;
+    justify-content: space-between;
+}
+
+/*Estilização dos tamanhos*/
+.card-content .size-value span{
+    display: block;
+    height: 28px;
+    width: 28px;
+    text-align: center;
+    color: #2464fa;
+    border-radius: 50%;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 28px;
+    cursor: pointer;
+}
+
+/*Estilização do tamanho com a classe Active*/
+.card-content .size-value span.active{
+    background: #2464fa;
+    color: #fff;
+}
+
+/*Estrutura das cores*/
+.card-content .colour-value{
+    display: flex;
+    width: 30%;
+    margin: 10px 0;
+    justify-content: space-between;
+}
+
+/*Estilização das cores */
+.card-content .colour-value span{
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+}
+
+/*Opções de cor das camisetas*/
+/*Roxa*/
+.card-content .colour-value span.violet{
+    background-image: linear-gradient(rgb(206, 107, 252),rgb(169, 43, 253),rgb(103, 39, 252));
+}
+/*Azul*/
+.card-content .colour-value span.blue{
+    background-image: linear-gradient(rgb(107, 158, 252),rgb(43, 109, 253),rgb(39, 53, 252));
+}
+/*Arco-íris*/
+.card-content .colour-value span.yellow{
+    background-image: linear-gradient(rgb(243, 255, 73),rgb(253, 43, 158),rgb(39, 53, 252));
+}
+
+/*Estrutura da borda em volta da cor selecionada*/
+.card-content .colour-value span.active:after{
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: -4px;
+    top: -4px;
+    box-sizing: border-box;
+    border: 2px solid #456ABD;
+    border-radius: 50%;
+}
+
+/*Cor da borda das outras cores*/
+/*roxa*/
+.card-content .colour-value span.violet.active:after{
+    border-color: rgb(151, 18, 192);
+}
+
+/*Arco-íris*/
+.card-content .colour-value span.yellow.active:after{
+    border-color: #db981c;
+}
+
+/*Estrutura dos botões*/
+.wrapper .btns{
+    display: flex;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/*Estilização dos botões*/
+.wrapper .btns button{
+    width: 100%;
+    height: 50%;
+    margin: 0 10px;
+    border: 2px solid #456ABD;
+    background: #2464fa;
+    outline: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 900;
+    cursor: pointer;
+    border-radius: 17px;
+}
+
+

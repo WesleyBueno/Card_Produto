@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card de produto</title>
+    <link rel="stylesheet" href="css/style.css">    <!--CSS-->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script> <!--Biblioteca jquery-->
+</head>
+<body>
+
+    <div class="container">         <!--Começo do container-->
+        <div class="image">
+            <img src="img/azul.jpg">        <!--Imagem do card-->
+        </div>
+        <div class="card-content">      <!--Inicio do conteúdo do card-->
+            <div class="wrapper">
+                <div class="title">Camiseta Tye die</div>
+                <p>Unisex</p>
+                <div class="price">R$39,99</div>
+                <div class="content-size">                          <!--Tamanhos-->
+                    <div class="name size-name">Tamanhos</div>
+                    <div class="size-value">
+                        <span class="color">PP</span>
+                        <span class="color">P</span>
+                        <span class="active">M</span>
+                        <span class="color">G</span>
+                        <span class="color">GG</span>
+                    </div>
+                </div>
+                <div class="content-colour">                    <!--Cores-->
+                    <div class="name colour-name">Cor</div>
+                    <div class="colour-value">
+                        <span class="violet" data-color="rgb(151, 18, 192)" data-img="img/roxa.jpg"></span>  <!--O data-color salva a cor definida dentro dele para esse span-->
+                        <span class="blue active" data-color="#2464fa" data-img="img/azul.jpg"></span>
+                        <span class="yellow" data-color="#db981c" data-img="img/iris.jpg"></span>
+                    </div>
+                </div>
+                <div class="btns">                          <!--Botões-->
+                    <button>Comprar agora</button>
+                    <button>Adicionar ao carrinho</button>
+                </div>
+            </div>      <!--fim do conteúdo do card-->
+        </div>
+    </div>          <!--Fim do container-->
+
+    <script>                                            /*Inicio do javascript*/
+        $(".colour-value span").click(function(){                                   /*Esta função altera os valores dentro dela quando um span da classe colour-value é clicado, alterando imagens e cores do layout*/
+            $(".colour-value span").removeClass("active")           /*Vai remover a classe "Active" de onde ela está*/
+            $(this).addClass("active")                              /*Adiciona a classe "Active" na cor selecionada, causando os efeitos abaixos de forma independente e personalizada*/
+            $("body").css("background", $(this).attr("data-color"));        /*Altera a cor do background do body com a cor definida no data-color*/
+            $(".price").css("color", $(this).attr("data-color"))            /*Altera a cor do texto do price com a cor definida no data-color*/
+            $(".size-value .color").css("color", $(this).attr("data-color"))    /*Altera a cor do texto do size-value com a cor definida no data-color*/
+            $(".size-value .active").css("background", $(this).attr("data-color"))  /*Altera a cor do background do size-value para a cor definidae no data-color*/
+            $(".wrapper .btns button").css({
+                "background" : $(this).attr("data-color"),              /*Altera a cor do background do button para a cor definida no data-color*/
+                "border-color": $(this).attr("data-color")              /*Altera a cor da borda do button para a cor definida no data-color*/
+            })
+            $(".image img").attr("src", $(this).attr("data-img"))       /*Altera a imagem do card com a a imagem definida no data-img*/
+        });
+
+    </script>                                          <!--Fim do javascript-->
+    
+</body>
+</html>
